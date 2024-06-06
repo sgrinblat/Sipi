@@ -18,4 +18,23 @@ export class ConexionService {
     return this.http.post<any>(this.apiUrl, body, { headers });
   }
 
+  sesionIniciada(): boolean {
+    const token = localStorage.getItem('tokenUser');
+    if (!token) {
+      return false;
+    }
+
+    const payload = JSON.parse(atob(token.split('.')[1]));
+    const currentTime = Math.floor(Date.now() / 1000);
+    if (payload.exp < currentTime) {
+      this.cerrarSesion();
+      return false;
+    }
+    return true;
+  }
+
+  cerrarSesion() {
+    localStorage.removeItem("tokenUser");
+  }
+
 }

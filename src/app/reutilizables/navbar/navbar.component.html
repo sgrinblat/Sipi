@@ -9,7 +9,8 @@
     <div class="collapse navbar-collapse me-5" id="navbarNav">
       <ul class="navbar-nav ms-auto">
         <li class="nav-item">
-          <a class="nav-link" href="#">Iniciar sesión</a>
+          <a *ngIf="!chequearSesion()" routerLink="" class="nav-link">Iniciar sesión</a>
+          <a *ngIf="chequearSesion()" (click)="desloguearse()" class="nav-link" href="#">Cerrar sesión</a>
         </li>
       </ul>
     </div>

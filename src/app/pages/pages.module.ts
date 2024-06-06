@@ -7,14 +7,17 @@ import { RouterModule } from '@angular/router';
 import { ReutilizablesModule } from '../reutilizables/reutilizables.module';
 
 import { HomepageComponent } from './homepage/homepage.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
 
 
 @NgModule({
   declarations: [
     HomepageComponent,
+    DashboardComponent,
   ],
   exports: [
     HomepageComponent,
+    DashboardComponent
   ],
   imports: [
     CommonModule,

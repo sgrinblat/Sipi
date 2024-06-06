@@ -3,6 +3,7 @@ import { RouterModule, Routes, CanActivate } from '@angular/router';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { HomepageComponent } from "./pages/homepage/homepage.component";
+import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 
 const routes: Routes = [
     {
@@ -11,10 +12,9 @@ const routes: Routes = [
       pathMatch: "full"
     },
     {
-      path: `**`,
-      pathMatch: "full",
-      redirectTo: "/error"
-    }
+      path: "dashboard",
+      component: DashboardComponent,
+    },
 
 ]
 
