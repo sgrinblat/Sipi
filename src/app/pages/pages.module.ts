@@ -24,7 +24,7 @@ import { HomepageComponent } from './homepage/homepage.component';
     BrowserModule,
     ReutilizablesModule,
   ],
-  providers: [{ provide: LOCALE_ID, useValue: 'es' }]
+  providers: []
 })
 export class PagesModule { }
 

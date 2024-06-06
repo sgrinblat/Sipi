@@ -7,16 +7,15 @@ import { map, Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ConexionService {
-  private baseUrl = 'https://admin.repuestoscelu.com.ar/api'; // URL base del API
-  private token = 'OTBmNGMxZjQtZjFmNS0xMWVlLWE4MzMtNjNlZjBlOGM3YjI1OmM4M2ExNDYxLWM5NDQtNDc4NS1iMzc2LWI0Njc0YzI2YmQ2Zg=='; // Token fijo
-  private headers = new HttpHeaders({
-    'Authorization': `Bearer ${this.token}`
-  });
+  private apiUrl = 'http://34.227.164.19/api/login';
 
-  private tokenUsuario = new HttpHeaders({
-    'Authorization': `Bearer ${localStorage.getItem("tokenUser")}`
-  });
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
+  iniciarSesionApi(username: string, password: string): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    const body = { username, password };
+
+    return this.http.post<any>(this.apiUrl, body, { headers });
+  }
 
 }

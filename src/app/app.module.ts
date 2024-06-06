@@ -10,7 +10,7 @@ import { ReutilizablesModule } from './reutilizables/reutilizables.module';
 import { PagesModule } from './pages/pages.module';
 import { Router } from '@angular/router';
 
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 
 @NgModule({
   declarations: [
@@ -25,6 +25,7 @@ import { Router } from '@angular/router';
     AppRoutingModule,
     ReutilizablesModule,
     PagesModule,
+    [SweetAlert2Module.forRoot()]
   ],
   exports: [
     ReactiveFormsModule,
