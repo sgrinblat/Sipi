@@ -36,5 +36,15 @@ export class ConexionService {
   cerrarSesion() {
     localStorage.removeItem("tokenUser");
   }
+}
+
+
+export class GetRequest{
+  private apiUrl: 'http://34.227.164.19/api/requests'
+  constructor(private http: HttpClient) {}
+
+  getData(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
+  }
 
 }

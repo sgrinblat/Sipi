@@ -8,16 +8,19 @@ import { ReutilizablesModule } from '../reutilizables/reutilizables.module';
 
 import { HomepageComponent } from './homepage/homepage.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ListRequestComponent } from './list-request/list-request.component';
 
 
 @NgModule({
   declarations: [
     HomepageComponent,
     DashboardComponent,
+    ListRequestComponent,
   ],
   exports: [
     HomepageComponent,
-    DashboardComponent
+    DashboardComponent,
+    ListRequestComponent,
   ],
   imports: [
     CommonModule,

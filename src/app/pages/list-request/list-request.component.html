@@ -1,0 +1,21 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Programas solicitados</th>
+        <th scope="col">Equipos solicitados</th>
+        <th scope="col">Solicitado el</th>
+        <th scope="col">Solicitado para el</th>
+        <th scope="col">Estado</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngfor="let item of data">
+        <th scope="row">{{item.id}}</th>
+        <td>{{item.programas_solicitados}}</td>
+        <td>{{item.solicitado_el}}</td>
+        <td>{{item.solicitado_para_el}}</td>
+        <td>{{item.estado}}</td>
+      </tr>
+    </tbody>
+  </table>
