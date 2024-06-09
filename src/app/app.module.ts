@@ -25,6 +25,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     AppRoutingModule,
     ReutilizablesModule,
     PagesModule,
+    AppRoutingModule,
     [SweetAlert2Module.forRoot()]
   ],
   exports: [

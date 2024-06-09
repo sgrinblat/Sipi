@@ -8,14 +8,15 @@ import { map, Observable } from 'rxjs';
 })
 export class ConexionService {
   private apiUrl = 'http://34.227.164.19/api/login';
-
-  constructor(private http: HttpClient) {}
+  public headers;
+  
+  constructor(private http: HttpClient) {
+    this.headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+  }
 
   iniciarSesionApi(username: string, password: string): Observable<any> {
-    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     const body = { username, password };
-
-    return this.http.post<any>(this.apiUrl, body, { headers });
+    return this.http.post<any>(this.apiUrl, body, this.headers);
   }
 
   sesionIniciada(): boolean {
@@ -36,15 +37,4 @@ export class ConexionService {
   cerrarSesion() {
     localStorage.removeItem("tokenUser");
   }
-}
-
-
-export class GetRequest{
-  private apiUrl: 'http://34.227.164.19/api/requests'
-  constructor(private http: HttpClient) {}
-
-  getData(): Observable<any> {
-    return this.http.get<any>(this.apiUrl);
-  }
-
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {GetRequest} from '../../service/conexion.service'
+import { RequestsService } from 'src/app/service/requests.service';
 @Component({
   selector: 'app-list-request',
   templateUrl: './list-request.component.html',
@@ -8,10 +8,10 @@ import {GetRequest} from '../../service/conexion.service'
 export class ListRequestComponent implements OnInit {
   data: any[] = [];
 
-  constructor( private getRequest: GetRequest) { }
+  constructor( private requestsService: RequestsService) { }
 
   ngOnInit(): void {
-    this.getRequest.getData().subscribe(
+    this.requestsService.getData().subscribe(
       (response) => {
         console.log(response);
         this.data = response;
