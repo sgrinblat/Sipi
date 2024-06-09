@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HTTP_INTERCEPTORS, HttpClient, HttpClientModule } from '@angular/common/http';
-import { HttpXsrfInterceptor } from './interceptors/http-xsrf-interceptor';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
@@ -34,9 +33,7 @@ import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
     FormsModule,
 
   ],
-  providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: HttpXsrfInterceptor, multi: true }
-  ],
+  providers: [],
 
   bootstrap: [AppComponent]
 })
