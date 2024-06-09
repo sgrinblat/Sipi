@@ -17,6 +17,7 @@ export class ListRequestComponent implements OnInit {
         this.data = response;
       },
       (error) => {
+        
         console.error('Error fetching data', error);
       }
     );
