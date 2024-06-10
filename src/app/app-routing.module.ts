@@ -5,6 +5,7 @@ import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HomepageComponent } from "./pages/homepage/homepage.component";
 import { DashboardComponent } from "./pages/dashboard/dashboard.component";
 import { ListRequestComponent } from "./pages/list-request/list-request.component";
+import { EditRequestComponent } from "./pages/edit-request/edit-request.component";
 
 const routes: Routes = [
     {
@@ -19,6 +20,9 @@ const routes: Routes = [
     {
       path:"list-request",
       component: ListRequestComponent,
+    },
+    {
+      path:"list-request/:requestId",component:EditRequestComponent
     }
 
 ]

@@ -23,13 +23,10 @@ export class HomepageComponent {
   }
 
   onSubmit() {
-    console.log("hola");
-
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;
       this.conexionService.iniciarSesionApi(email, password).subscribe(
         response => {
-          console.log('Login correcto', response);
           localStorage.setItem("tokenUser", response.token);
           Swal.fire({
             title: "Sesión iniciada",

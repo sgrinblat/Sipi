@@ -1,0 +1,51 @@
+<div class="container">
+
+    <div *ngIf="loading; else elseBlock">
+        <div class="text-center my-5">
+            <button class="btn btn-primary" type="button" disabled>
+                <span class="spinner-border spinner-border-sm" aria-hidden="true"></span>
+                <span role="status"> Cargando...</span>
+              </button>
+        </div>
+    </div>
+
+
+    <ng-template #elseBlock>
+        <div class="row my-5 ">
+            <div class="col-xs-12">
+                <h1>Editar Solicitud</h1>
+            </div>
+        </div>
+        <form [formGroup]="editRequestForm" (ngSubmit)="enviar()">
+            <div class="row">
+                <div class="col-xs-12 col-md-2">
+                    <label for="requestedDate" class="form-label">Fecha de solicitud</label>
+                    <input [ngClass]="{'is-invalid': tieneErrores('requestedDate', 'required')}" type="date"
+                        class="form-control" id="requestedDate" formControlName="requestedDate">
+                </div>
+                <div class="col-xs-12 col-sm-1">
+                    <label for="requestedAmount" class="form-label">Cantidad</label>
+                    <input [ngClass]="{'is-invalid': tieneErrores('requestedAmount', 'required')}" type="number"
+                        class="form-control" id="requestedAmount" formControlName="requestedAmount">
+                </div>
+
+                <div class="col-xs-12 col-md-9">
+                    <label for="requestedPrograms" class="form-label">Programas solicitados</label>
+                    <input [ngClass]="{'is-invalid': tieneErrores('requestedPrograms', 'required')}" type="text"
+                        class="form-control" id="requestedPrograms" formControlName="requestedPrograms">
+                </div>
+
+                <div class="col-xs-12">
+                    <label for="observations" class="form-label">Observaciones</label>
+                    <textarea type="text" class="form-control" id="observations"
+                        formControlName="observations"></textarea>
+                </div>
+
+                <div class="col-xs-12 text-end mt-3">
+                    <button type="button" [routerLink]="['/list-request']" class="btn btn-default m-2">Volver</button>
+                    <button type="submit" class="btn btn-success m-2">Editar</button>
+                </div>
+            </div>
+        </form>
+    </ng-template>
+</div>
