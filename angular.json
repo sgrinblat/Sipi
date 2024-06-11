@@ -71,10 +71,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Sipi:build:production"
+              "buildTarget": "Sipi:build:production"
             },
             "development": {
-              "browserTarget": "Sipi:build:development"
+              "buildTarget": "Sipi:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -82,7 +82,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Sipi:build"
+            "buildTarget": "Sipi:build"
           }
         },
         "test": {
