@@ -1,11 +1,12 @@
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import { ToolbarComponent } from 'src/app/reutilizables/toolbar/toolbar.component';
 import { RequestsService } from 'src/app/service/requests.service';
 @Component({
   selector: 'app-list-request',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink,ToolbarComponent],
   templateUrl: './list-request.component.html',
   styleUrls: ['./list-request.component.css']
 })
