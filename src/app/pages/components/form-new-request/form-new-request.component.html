@@ -1,0 +1,45 @@
+<form [formGroup]="myForm">
+    <div class=" mb-3">
+        <label selected disabled>Seleccione una materia</label>
+        <select class="form-select" aria-label="Default select example" formControlName="selectedSubject" required>
+            <option *ngFor="let option of subjects" [value]="option">{{ option }}</option>
+        </select>
+        <div *ngIf="myForm.get('selectedSubject').errors && myForm.get('selectedSubject').touched" class="text-warning">
+            El campo materia debe estar completo
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="requestedPrograms">Programas necesarios:</label>
+        <select class="form-select" aria-label="Default select example" id="multiSelect"
+            formControlName="requestedPrograms">
+            <option *ngFor="let option of options" [value]="option">{{ option }}</option>
+        </select>
+        <div *ngIf="myForm.get('requestedPrograms').errors && myForm.get('requestedPrograms').touched"
+            class="text-warning">
+            El campo programa debe estar completo
+        </div>
+    </div>
+    <div class="row g-2">
+        <div class="col-auto">
+            <label for="requestedDate" class="form-label">Fecha de solicitud</label>
+            <input type="date" class="form-control" id="requestedDate" formControlName="requestedDate" required>
+            <div *ngIf="myForm.get('requestedDate').errors && myForm.get('requestedDate').touched" class="text-warning">
+                El campo fecha debe estar completo
+            </div>
+        </div>
+        <div class="col-auto">
+            <label for="requestedAmount" class="form-label">Cantidad solicitada</label>
+            <input type="text" class="form-control" id="requestedAmount" placeholder="Indique la cantidad"
+                formControlName="requestedAmount" required>
+            <div *ngIf="myForm.get('requestedAmount').errors && myForm.get('requestedAmount').touched"
+                class="text-warning">
+                El campo cantidad debe estar completo
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="observations" class="form-label">Observaciones</label>
+        <textarea class="form-control" id="observations" rows="3" placeholder="Indique sus observaciones"
+            formControlName="observations"></textarea>
+    </div>
+</form>

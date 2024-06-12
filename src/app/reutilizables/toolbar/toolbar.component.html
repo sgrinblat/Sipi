@@ -2,8 +2,11 @@
     <div>
         <h1>Mis solicitudes</h1>
     </div>
-   
-    <div class="btn-group me-2" role="group" aria-label="First group">
-        <button type="button" class="btn btn-success" (click)="openModal()">Nueva Solicitud</button>
+
+    <div class="row g-2">
+        <div class=" col-auto" role="group" aria-label="First group">
+            <button type="button" class="btn btn-success" (click)="openModal()">Nueva Solicitud</button>
+            <app-modal [isVisible]="isModalVisible" (closeModal)="hideModal()"></app-modal>
+        </div>
     </div>
 </div>

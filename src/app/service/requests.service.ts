@@ -50,4 +50,15 @@ export class RequestsService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
     return this.http.patch<any>(`${this.apiUrl}/edit/${id}`, newData, { headers });
   }
+
+  /**
+ * 
+ * Author: Lucía Pereyra
+ * @param request objeto que se envía al servidor
+ * 
+ */
+  createRequest(request: Object): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+    return this.http.post<any>(`${this.apiUrl}`, request, { headers });
+  }
 }
