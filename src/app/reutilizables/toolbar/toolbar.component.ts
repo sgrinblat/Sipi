@@ -17,10 +17,6 @@ export class ToolbarComponent {
     this.isModalVisible = true;
   }
 
-  openModalRequestsSend() {
-    this.isModalVisible = true
-  }
-
   hideModal() {
     this.isModalVisible = false;
   }
