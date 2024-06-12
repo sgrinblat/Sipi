@@ -8,10 +8,19 @@
     </button>
     <div class="collapse navbar-collapse me-5" id="navbarNav">
       <ul class="navbar-nav ms-auto">
+       
+        <li class="nav-item">
+          <a class="nav-link" href="https://www.ifts11.com/wp/sample-page/#page-content" target="_blank">Instituto </a>
+        </li>
+        
         <li class="nav-item">
           <a *ngIf="!chequearSesion()" routerLink="" class="nav-link">Iniciar sesión</a>
           <a *ngIf="chequearSesion()" (click)="desloguearse()" class="nav-link" href="#">Cerrar sesión</a>
         </li>
+
+     
+        
+        
       </ul>
     </div>
   </div>
