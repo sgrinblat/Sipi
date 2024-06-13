@@ -28,4 +28,21 @@ export class ListRequestComponent implements OnInit {
     );
   }
 
+
+eliminar(id: string): void {
+  if (confirm('¿Estás seguro de que deseas eliminar esta solicitud?')) {
+    this.requestsService.deleteRequest(id).subscribe(
+      () => {
+       
+        this.data = this.data.filter(item => item.id !== id);
+        console.log(`Solicitud con ID: ${id} eliminada`);
+      },
+      (error) => {
+        console.error('Error al eliminar la solicitud', error);
+      }
+    );
+  }
+}
+
+
 }

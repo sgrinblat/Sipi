@@ -24,7 +24,8 @@
             <td>{{item.estado}}</td>
             <td>
               <div *ngIf="item.estado == 'ACCEPTED'">
-                <button type="button" class="btn btn-sm btn-warning" [routerLink]="['/list-request',item.id]">Editar</button>
+                <button type="button" class="btn btn-sm btn-warning btn-margin-right" [routerLink]="['/list-request',item.id]">Editar</button>
+                <button type="button" class="btn btn-sm btn-danger" (click)="eliminar(item.id)">Eliminar</button>
               </div>
             </td>
           </tr>

@@ -61,4 +61,15 @@ export class RequestsService {
     const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
     return this.http.post<any>(`${this.apiUrl}`, request, { headers });
   }
+
+
+   /**
+   * Author: Cecilia Mogro
+   * 
+   */
+   deleteRequest(id: string): Observable<any> {
+    const headers = new HttpHeaders().set('Authorization', `Bearer ${this.token}`);
+    return this.http.delete<any>(`${this.apiUrl}/delete/${id}`, { headers });
+  }
+
 }
