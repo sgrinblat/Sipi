@@ -16,11 +16,10 @@ export class ModalComponent {
   @ViewChild(FormNewRequestComponent) childFormComponent: FormNewRequestComponent;
 
   constructor(private requestsService: RequestsService) { }
-  data: any[] = [];
 
   private createRequest(request: Object) {
     this.requestsService.createRequest(request).subscribe(
-      (response) => {   
+      (response) => {
         Swal.fire({
           title: "Intento exitoso",
           text: `${response.message}`,
