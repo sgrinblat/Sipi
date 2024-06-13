@@ -4,17 +4,18 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ConexionService } from 'src/app/service/conexion.service';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
+import { BreadcrumbService } from 'src/app/service/breadcrumb.service';
 
 @Component({
   selector: 'app-homepage',
   templateUrl: './homepage.component.html',
   styleUrls: ['./homepage.component.css']
 })
-export class HomepageComponent {
+export class HomepageComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(private fb: FormBuilder, private conexionService: ConexionService,
-    private cdr: ChangeDetectorRef, private route: Router
+    private cdr: ChangeDetectorRef, private route: Router , private breadcrumbService: BreadcrumbService
   ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
@@ -22,6 +23,11 @@ export class HomepageComponent {
     });
   }
 
+  ngOnInit() {
+    this.breadcrumbService.setBreadcrumbs([
+    
+    ]);
+  }
   onSubmit() {
     if (this.loginForm.valid) {
       const { email, password } = this.loginForm.value;

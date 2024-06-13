@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BreadcrumbService } from 'src/app/service/breadcrumb.service';
 import { ConexionService } from 'src/app/service/conexion.service';
 
 @Component({
@@ -8,9 +9,14 @@ import { ConexionService } from 'src/app/service/conexion.service';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor(private conexionService: ConexionService) { }
+  constructor(private conexionService: ConexionService,
+              private breadcrumbService: BreadcrumbService
+  ) { }
 
   ngOnInit() {
+    this.breadcrumbService.setBreadcrumbs([
+      { label: 'Dashboard', url: '/dashboard' },
+    ]);
   }
 
   chequearSesion() {

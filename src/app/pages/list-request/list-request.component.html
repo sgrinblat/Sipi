@@ -19,11 +19,11 @@
             <th scope="row">{{item.id}}</th>
             <td>{{item.programas_solicitados}}</td>
             <td>{{item.equipos_solicitados}}</td>
-            <td>{{item.solicitado_el}}</td>
-            <td>{{item.solicitado_para_el}}</td>
+            <td>{{item.solicitado_el | date: 'dd/MM/yyyy'}}</td>
+            <td>{{item.solicitado_para_el | date: 'dd/MM/yyyy'}}</td>
             <td>{{item.estado}}</td>
             <td>
-              <div *ngIf="item.estado == 'ACCEPTED'">
+              <div *ngIf="item.estado == 'PENDING'">
                 <button type="button" class="btn btn-sm btn-warning btn-margin-right" [routerLink]="['/list-request',item.id]">Editar</button>
                 <button type="button" class="btn btn-sm btn-danger" (click)="eliminar(item.id)">Eliminar</button>
               </div>

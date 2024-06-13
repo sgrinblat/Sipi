@@ -20,8 +20,7 @@ export class ModalComponent {
 
   private createRequest(request: Object) {
     this.requestsService.createRequest(request).subscribe(
-      (response) => {
-        this.data = response;
+      (response) => {   
         Swal.fire({
           title: "Intento exitoso",
           text: `${response.message}`,
